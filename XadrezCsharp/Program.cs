@@ -11,11 +11,8 @@ namespace XadrezCsharp
             try
             {
                 Tabuleirocl tab = new Tabuleirocl(8, 8);
-
-                PosicaoXadrez pos = new PosicaoXadrez('a', 1);
-
-
-                Console.WriteLine(pos.toPosicao());
+                tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
+                tab.colocarPeca(new Rei(tab, Cor.Branca), new Posicao(1, 0));
                 Tela.imprimirTabuleiro(tab);
             }
             catch (TabuleiroException e)
