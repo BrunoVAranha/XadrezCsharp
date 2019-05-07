@@ -10,10 +10,19 @@ namespace XadrezCsharp
         {
             try
             {
-                Tabuleirocl tab = new Tabuleirocl(8, 8);
-                tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
-                tab.colocarPeca(new Rei(tab, Cor.Branca), new Posicao(1, 0));
-                Tela.imprimirTabuleiro(tab);
+                PartidaDeXadrez partida = new PartidaDeXadrez();
+ while (!partida.terminada)
+                {
+                    Console.Clear();
+                    Tela.imprimirTabuleiro(partida.tab);
+                    Console.WriteLine("Origem: ");
+                    Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
+                    Console.WriteLine("Destino: ");
+                    Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
+
+                    partida.executarMovimento(origem, destino);
+                }
+                Tela.imprimirTabuleiro(partida.tab);
             }
             catch (TabuleiroException e)
             {
