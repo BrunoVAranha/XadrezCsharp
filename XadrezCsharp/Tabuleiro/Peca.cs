@@ -19,9 +19,14 @@ namespace Tabuleiro
             this.qtdMovimentos = 0;
         }
 
-        public void incrementarqtdMovimentos()
+        public void incrementarQtdMovimentos()
         {
             qtdMovimentos++;
+        }
+
+        public void decrementarQtdMovimentos()
+        {
+            qtdMovimentos--;
         }
 
         public bool podeMoverPara(Posicao pos)
