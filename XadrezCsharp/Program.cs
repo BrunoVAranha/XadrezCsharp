@@ -12,6 +12,7 @@ namespace XadrezCsharp
             {
                 PartidaDeXadrez partida = new PartidaDeXadrez();
                 while (!partida.terminada)
+                {
                     try
                     {
                         Console.Clear();
@@ -34,7 +35,9 @@ namespace XadrezCsharp
                         Console.WriteLine(e.Message);
                         Console.ReadLine();
                     }
-
+                }
+                Console.Clear();
+                Tela.imprimirPartida(partida);
             }
             catch (TabuleiroException e)
             {

@@ -51,15 +51,23 @@ namespace XadrezCsharp
             imprimirTabuleiro(partida.tab);
             Console.WriteLine();
             Console.WriteLine("Turno: " + partida.turno);
-            Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
-            Console.WriteLine();
-            imprimirPecasCapturadas(partida);
-            if (partida.xeque)
+            if (!partida.terminada)
             {
-                Console.WriteLine("VOCÊ ESTÁ EM XEQUE!");
+                Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+                Console.WriteLine();
+                imprimirPecasCapturadas(partida);
+                if (partida.xeque)
+                {
+                    Console.WriteLine("VOCÊ ESTÁ EM XEQUE!");
+                }
             }
-        }
-
+            else
+            {
+                Console.WriteLine("XEQUE MATE!");
+                Console.WriteLine("Vencedor: " + partida.jogadorAtual);
+            }
+            }
+        
         public static void imprimirPecasCapturadas(PartidaDeXadrez partida)
         {
             Console.WriteLine("Peças capturadas: ");
