@@ -96,8 +96,17 @@ namespace XadrezCsharp
         public static PosicaoXadrez lerPosicaoXadrez()
         {
             string s = Console.ReadLine();
+
+            if (s == "sair")
+            {
+                Console.WriteLine("Pressione Enter para sair.");
+                Console.ReadLine();
+                Environment.Exit(1);
+            }
             char coluna = s[0];
             int linha = int.Parse(s[1] + "");
+
+
             return new PosicaoXadrez(coluna, linha);
         }
 
@@ -122,5 +131,7 @@ namespace XadrezCsharp
                 }
             }
             }
+        
+
         }
     }
